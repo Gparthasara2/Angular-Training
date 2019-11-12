@@ -1,0 +1,29 @@
+<div class="col-md-6">
+    <br><br>
+    <h2>Edit Track</h2>
+
+
+    <div *ngFor="let t of tracks">
+        <div *ngIf="t.code == tCode">
+            <form center>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input [(ngModel)]="t.name" name="name" class="form-control" id="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="designation">Duration:</label>
+                    <input [(ngModel)]="t.duration" name="duration" class="form-control" id="duration">
+                </div>
+
+                <!-- <div class="form-group">
+                        <label for="Id">Employee Id</label>
+                        <input [(ngModel)]="e.id"  name="employeeid" class="form-control"
+                            id="employeeid">
+                    </div> -->
+
+                <a routerLink="/viewTracks" class="btn btn-primary" (click)="editTrack(t)">Edit</a>
+            </form>
+        </div>
+    </div>
+</div>

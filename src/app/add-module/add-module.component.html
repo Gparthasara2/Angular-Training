@@ -1,0 +1,24 @@
+<div class="col-md-6">
+        <br><br>
+            <h2>Add Module</h2>
+            <form center>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="name" [(ngModel)]="m.name" placeholder="Name" name="name" class="form-control" id="name">
+                </div>
+        
+                <div class="form-group">
+                    <label for="designation">Duration:</label>
+                    <input type="number" [(ngModel)]="m.duration" placeholder="Duration" name="duration" class="form-control"
+                        id="duration">
+                </div>
+        
+                <div class="form-group">
+                    <label for="empId">Code</label>
+                    <input [(ngModel)]="m.code" placeholder="Module Code" name="Module Code" class="form-control"
+                        id="modulecode">
+                </div>
+                <a routerLink="/viewModules" class="btn btn-success" (click)="createModule()">Create</a>
+               
+            </form>
+        </div>

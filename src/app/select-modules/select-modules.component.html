@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="abc">
+        <div *ngFor="let t of tracks">
+            <div *ngIf="t.code == tCode">
+                <div>
+                    <h1><strong>Track Name: {{t.name}}</strong></h1>
+                </div>
+                <div>
+                    <h2>Track Code: {{t.code}}</h2>
+                </div>
+                <div>Available Modules: </div>
+                <div *ngFor="let m of t.availableModules">
+                    <input type="checkbox" class="form-check-input" value="m.name" name="chk">{{m.name}}<br>
+
+
+                </div>
+                <!-- <div>
+                    <input [(ngModel)]="topic1" type="text" name="topic1" id="topic1" placeholder="The Topic goes here.."><br><br>
+                </div>
+                <div>
+                    <input [(ngModel)]="topic2" type="text" name="topic1" id="topic1" placeholder="The Topic goes here.."><br><br>
+                </div>
+                <div>
+                    <input [(ngModel)]="topic3" type="text" name="topic1" id="topic1" placeholder="The Topic goes here.."><br><br>
+                </div>
+                <a class="btn btn-primary" routerLink="/viewModules" (click)="addTopic(m,topic1,topic2,topic3)">Add to Cart</a> -->
+            </div>
+        </div>
+
+    </div>
+</div>

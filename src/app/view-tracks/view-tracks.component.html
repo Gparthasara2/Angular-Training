@@ -1,0 +1,26 @@
+<div class="col-md-6">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Duration</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of tracks">
+                <td>{{t.name}}</td>
+                <td>{{t.code}}</td>
+                <td>{{t.duration}} days</td>
+
+
+                <td><button class="btn btn-danger" (click)="deleteTrack(t)"> Delete Track</button></td>
+                <td><a class="btn btn-primary" [routerLink]="['/editTrack',t.code]"> Edit Track</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/selectModules',t.code]"> Select Modules</a></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="col-md-6">
+    <br><br>
+    <h2>Edit Employee</h2>
+
+    
+    <div *ngFor="let e of employees">
+        <div *ngIf="e.id == empid">
+            <form center>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input [(ngModel)]="e.name"  name="name" class="form-control" id="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="designation">Designation:</label>
+                    <input [(ngModel)]="e.designation"  name="designation"
+                        class="form-control" id="designation">
+                </div>
+
+                <!-- <div class="form-group">
+                    <label for="Id">Employee Id</label>
+                    <input [(ngModel)]="e.id"  name="employeeid" class="form-control"
+                        id="employeeid">
+                </div> -->
+
+                <a routerLink="/viewEmp" class="btn btn-primary" (click)="editEmployee(e)">Edit</a>
+            </form>
+        </div>
+    </div>
+</div>

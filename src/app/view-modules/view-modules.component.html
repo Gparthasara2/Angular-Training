@@ -1,0 +1,36 @@
+<div class="col-md-6">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Duration</th>
+                <th>Topics</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of modules">
+                <td>{{m.name}}</td>
+                <td>{{m.code}}</td>
+                <td>{{m.duration}} days</td>
+                <td>
+                    <div *ngIf="m.topics != null">
+                        <div *ngFor="let string of m.topics">
+                            <div *ngIf="m.topics.indexOf(string) != m.topics.length - 1;then Comma else fullStop">
+
+                            </div>
+                            <ng-template #Comma>{{string}},</ng-template>
+                            <ng-template #fullStop>{{string}}.</ng-template>
+                        </div>
+                    </div>
+                </td>
+
+                <td><button class="btn btn-danger" (click)="deleteModule(m)"> Delete Module</button></td>
+                <td><a class="btn btn-primary" [routerLink]="['/editModule',m.code]"> Edit Module</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/addTopics',m.code]"> Add Topics</a></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
